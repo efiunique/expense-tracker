@@ -1,0 +1,240 @@
+/* رنگ‌های اصلی برنامه */
+:root {
+  --background: #f2f4f7;
+  --card: #ffffff;
+  --text: #222222;
+  --muted: #777777;
+  --border: #dddddd;
+  --primary: #2f6fde;
+  --danger: #d93838;
+}
+
+/* رنگ‌ها در حالت تاریک */
+body.dark {
+  --background: #1b1e24;
+  --card: #262a33;
+  --text: #eeeeee;
+  --muted: #aaaaaa;
+  --border: #3c414d;
+  --primary: #5b8ff0;
+  --danger: #f06464;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Vazirmatn, Tahoma, Arial, sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* سربرگ */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.header h1 {
+  font-size: 22px;
+  margin: 0;
+}
+
+.theme-button {
+  background-color: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* کارت‌ها */
+.card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.card h2 {
+  font-size: 18px;
+  margin: 0 0 12px 0;
+}
+
+/* فرم */
+.form-row {
+  margin-bottom: 12px;
+}
+
+.form-row label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 15px;
+  background-color: var(--card);
+  color: var(--text);
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid var(--primary);
+  border-color: var(--primary);
+}
+
+.error-message {
+  color: var(--danger);
+  font-size: 14px;
+  margin: 0 0 10px 0;
+  min-height: 20px;
+}
+
+.add-button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  opacity: 0.9;
+}
+
+/* خلاصه */
+.total {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 12px 0;
+}
+
+.category-summary {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-summary li {
+  margin-bottom: 10px;
+}
+
+.summary-text {
+  font-size: 14px;
+  margin: 0 0 4px 0;
+}
+
+/* نمودار درصد هر دسته */
+.bar {
+  background-color: var(--border);
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  background-color: var(--primary);
+  height: 100%;
+}
+
+/* لیست هزینه‌ها */
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.list-header h2 {
+  margin: 0;
+}
+
+.list-header select {
+  width: auto;
+}
+
+.expense-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.expense-item:last-child {
+  border-bottom: none;
+}
+
+.expense-text {
+  word-break: break-word;
+}
+
+.delete-button {
+  background-color: transparent;
+  color: var(--danger);
+  border: 1px solid var(--danger);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: var(--danger);
+  color: #ffffff;
+}
+
+.empty-message {
+  color: var(--muted);
+  text-align: center;
+  margin: 10px 0 0 0;
+}
+
+/* موبایل */
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  .header h1 {
+    font-size: 18px;
+  }
+
+  .expense-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
