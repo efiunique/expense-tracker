@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>دفتر هزینه‌ی شخصی</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <header class="header">
+      <h1>دفتر هزینه‌ی شخصی</h1>
+      <button type="button" id="theme-button" class="theme-button">تغییر تم</button>
+    </header>
+
+    <!-- فرم افزودن هزینه -->
+    <section class="card">
+      <h2>افزودن هزینه</h2>
+      <form id="expense-form">
+        <div class="form-row">
+          <label for="title-input">عنوان</label>
+          <input type="text" id="title-input" placeholder="مثلاً ناهار">
+        </div>
+
+        <div class="form-row">
+          <label for="amount-input">مبلغ (تومان)</label>
+          <input type="text" id="amount-input" inputmode="numeric" placeholder="مثلاً ۱۲۰۰۰۰">
+        </div>
+
+        <div class="form-row">
+          <label for="category-input">دسته</label>
+          <select id="category-input">
+            <option value="خوراک">خوراک</option>
+            <option value="رفت‌وآمد">رفت‌وآمد</option>
+            <option value="تفریح">تفریح</option>
+            <option value="سایر">سایر</option>
+          </select>
+        </div>
+
+        <p id="error-message" class="error-message"></p>
+
+        <button type="submit" class="add-button">افزودن</button>
+      </form>
+    </section>
+
+    <!-- خلاصه و جمع هزینه‌ها -->
+    <section class="card">
+      <h2>خلاصه</h2>
+      <p class="total">جمع کل: <span id="total-amount">۰ تومان</span></p>
+      <ul id="category-summary" class="category-summary"></ul>
+    </section>
+
+    <!-- لیست هزینه‌ها -->
+    <section class="card">
+      <div class="list-header">
+        <h2>لیست هزینه‌ها</h2>
+        <select id="filter-select">
+          <option value="همه">همه‌ی دسته‌ها</option>
+          <option value="خوراک">خوراک</option>
+          <option value="رفت‌وآمد">رفت‌وآمد</option>
+          <option value="تفریح">تفریح</option>
+          <option value="سایر">سایر</option>
+        </select>
+      </div>
+
+      <ul id="expense-list" class="expense-list"></ul>
+      <p id="empty-message" class="empty-message">هزینه‌ای ثبت نشده است.</p>
+    </section>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
