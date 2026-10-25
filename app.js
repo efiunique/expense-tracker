@@ -23,10 +23,31 @@ let expenses = [];
 function loadExpenses() {
   const saved = localStorage.getItem("expenses");
 
-  // اگر قبلاً چیزی ذخیره شده بود، از متن به آرایه تبدیلش کن
-  if (saved !== null) {
-    expenses = JSON.parse(saved);
+  //اگر چیزی ذخیره نشده بود لیست خالی رو برمیگردونه
+  if (saved === null) {
+    return
   }
+
+
+  
+  // agar matn vared shode kharab bashe JSON.parse error mide va (try/catch) jologiri mikone az error
+  // agar tuye try be error bokhorim catch run mishe
+  try {
+    const data = JSON.parse(saved);
+    // check kardan array budan
+    if (Array.isArray(data)) {
+      expenses = data; 
+    }
+    else {
+      expenses = [];
+    }
+
+  } 
+  catch (error) {
+    expenses = []
+  }
+
+
 }
 
 function saveExpenses() {
