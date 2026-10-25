@@ -125,16 +125,11 @@ function addExpense(event) {
 }
 
 function deleteExpense(id) {
-  // یک لیست جدید می‌سازیم که همه‌ی هزینه‌ها را دارد جز هزینه‌ای که حذف می‌شود
-  const newList = [];
+  // filter hazine hayee ro negah midare ke id unha ba id hazf shode fargh dare
+  expenses = expenses.filter(function(expense){
+    return expense.id !== id;
+  });
 
-  for (let i = 0; i < expenses.length; i++) {
-    if (expenses[i].id !== id) {
-      newList.push(expenses[i]);
-    }
-  }
-
-  expenses = newList;
   saveExpenses();
   showAll();
 }
